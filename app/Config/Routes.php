@@ -5,8 +5,7 @@ $routes = Services::routes();
 
 // Load the system's routing file first, so that the app and ENVIRONMENT
 // can override as needed.
-if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
-{
+if (file_exists(SYSTEMPATH . 'Config/Routes.php')){
 	require SYSTEMPATH . 'Config/Routes.php';
 }
 
@@ -31,6 +30,21 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/api', 'Home::index');
+
+$routes->get('/api/user/all', 'User::all');
+$routes->post('/api/auth/register', 'User::save');
+$routes->post('/api/user/update', 'User::update');
+$routes->post('/api/user/delete', 'User::delete');
+$routes->post('/api/user/search', 'User::search');
+
+$routes->post('/api/auth/create', 'Auth::create');
+
+
+// JWT
+// $routes->resource('api/auth', ['controller' => 'Auth']);
+// $routes->resource('api/user', ['controller' => 'User']);
+
 
 /**
  * --------------------------------------------------------------------

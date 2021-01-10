@@ -16,10 +16,10 @@
     - docker-compose up -d
 
 ## What do i use?
-Codeigniter: Version 4.0.4
-Docker: Official php:7.4-apache image
-JWT: Authentication with json web tokens
-MySql: Mysql version 5.7
+- Codeigniter: Version 4.0.4
+- Docker: Official php:7.4-apache image
+- JWT: Authentication with json web tokens
+- MySql: Mysql version 5.7
 
 ## Feel free to use this project for your needs
 
